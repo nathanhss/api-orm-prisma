@@ -1,13 +1,12 @@
 import { Router } from "express";
-import { CreateUserController } from "../controllers/CreateUserController";
-import { FindUserController } from "../controllers/FindUserController";
+import { UserController } from "../controllers/UserController";
 
 const router = Router();
 
-const createUser = new CreateUserController();
-const findUser = new FindUserController();
+const userController = new UserController();
 
-router.post("/user", createUser.handle);
-router.get("/user/:id", findUser.handle); 
+router.post("/user", userController.createUser);
+router.get("/user/:id", userController.findUserById); 
+router.put("/user", userController.updateUserById);
 
 export {router};
