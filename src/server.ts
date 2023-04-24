@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(router);
 
-app.listen(3333, () => {
-    console.log("server listening on port 3333")
+app.listen(Number(constants.SERVER_PORT), () => {
+    console.log("server listening on port " + constants.SERVER_PORT)
 });
 
